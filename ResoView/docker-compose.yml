@@ -1,0 +1,9 @@
+﻿name: "reso-view"
+version: "0.1"
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports:
+      - "41433:1433"
+    env_file:
+      - "./docker.env"
