@@ -11,7 +11,7 @@ namespace ResoView
 {
 
 
-    public partial class _Default
+    public partial class Product
     {
 
         /// <summary>
