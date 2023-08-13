@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using ResoView.Constants;
 using ResoView.Models;
 
 namespace ResoView.Migrations
@@ -29,15 +30,15 @@ namespace ResoView.Migrations
 
       context.Users.Add(adminUser);
 
-      var userRoles = new List<AppRole>()
+      var userRoles = new List<AppRole>
       {
-        new AppRole()
+        new AppRole
         {
-          Name = "admin"
+          Name = AppRoleConstant.Admin
         },
-        new AppRole()
+        new AppRole
         {
-          Name = "member"
+          Name = AppRoleConstant.Member
         }
       };
       foreach (var userRole in userRoles)

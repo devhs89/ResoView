@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using ResoView.Constants;
 using ResoView.Models;
 
 namespace ResoView.Account
@@ -23,7 +24,7 @@ namespace ResoView.Account
         return;
       }
 
-      manager.AddToRole(user.Id, "member");
+      manager.AddToRole(user.Id, AppRoleConstant.Member);
       signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
       IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
     }

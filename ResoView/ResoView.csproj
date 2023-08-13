@@ -356,6 +356,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Constants\AppRoleConstant.cs" />
     <Compile Include="Migrations\202308130300178_CreateInitialIdentityTables.cs" />
     <Compile Include="Migrations\202308130300178_CreateInitialIdentityTables.designer.cs">
       <DependentUpon>202308130300178_CreateInitialIdentityTables.cs</DependentUpon>
