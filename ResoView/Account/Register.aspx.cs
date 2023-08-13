@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
@@ -24,6 +25,10 @@ namespace ResoView.Account
 
         signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+      }
+      else
+      {
+        ErrorMessage.Text = result.Errors.FirstOrDefault();
       }
     }
   }

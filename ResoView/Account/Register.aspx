@@ -5,25 +5,27 @@
     <h2 id="title"><%: Title %>.</h2>
     <h4>Create a new account</h4>
     <hr />
-    <asp:ValidationSummary CssClass="text-danger" runat="server" />
+    <p class="text-danger">
+      <asp:Literal ID="ErrorMessage" runat="server" />
+    </p>
     <div class="row">
       <asp:Label AssociatedControlID="FirstName" CssClass="col-md-2 col-form-label" runat="server">Firstname</asp:Label>
       <div class="col-md-10">
-        <asp:TextBox CssClass="form-control" ID="FirstName" runat="server" />
+        <asp:TextBox CssClass="form-control" ID="FirstName" runat="server" Text="Harpreet" />
         <asp:RequiredFieldValidator ControlToValidate="FirstName" CssClass="text-danger" ErrorMessage="The first name field is required." runat="server" />
       </div>
     </div>
     <div class="row">
       <asp:Label AssociatedControlID="LastName" CssClass="col-md-2 col-form-label" runat="server">Lastname</asp:Label>
       <div class="col-md-10">
-        <asp:TextBox CssClass="form-control" ID="LastName" runat="server" />
+        <asp:TextBox CssClass="form-control" ID="LastName" runat="server" Text="Singh" />
         <asp:RequiredFieldValidator ControlToValidate="LastName" CssClass="text-danger" ErrorMessage="The last name field is required." runat="server" />
       </div>
     </div>
     <div class="row">
       <asp:Label AssociatedControlID="Email" CssClass="col-md-2 col-form-label" runat="server">Email</asp:Label>
       <div class="col-md-10">
-        <asp:TextBox CssClass="form-control" ID="Email" runat="server" TextMode="Email" />
+        <asp:TextBox CssClass="form-control" ID="Email" runat="server" Text="admin.user@gmail.com" TextMode="Email" />
         <asp:RequiredFieldValidator ControlToValidate="Email" CssClass="text-danger" ErrorMessage="The email field is required." runat="server" />
       </div>
     </div>
