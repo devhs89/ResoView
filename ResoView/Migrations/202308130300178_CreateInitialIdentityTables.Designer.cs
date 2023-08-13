@@ -13,7 +13,7 @@ namespace ResoView.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202308130052533_CreateInitialIdentityTables"; }
+            get { return "202308130300178_CreateInitialIdentityTables"; }
         }
         
         string IMigrationMetadata.Source

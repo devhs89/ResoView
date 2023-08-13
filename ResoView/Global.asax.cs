@@ -11,7 +11,8 @@ namespace ResoView
   {
     void Application_Start(object sender, EventArgs e)
     {
-      Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+      // Seed Data
+      Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ResoViewDbContext>());
 
       // Code that runs on application startup
       RouteConfig.RegisterRoutes(RouteTable.Routes);

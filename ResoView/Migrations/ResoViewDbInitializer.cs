@@ -7,17 +7,19 @@ using ResoView.Models;
 
 namespace ResoView.Migrations
 {
-  public class ApplicationDbInitializer : DbMigrationsConfiguration<ApplicationDbContext>
+  public class ResoViewDbInitializer : DbMigrationsConfiguration<ResoViewDbContext>
   {
-    public ApplicationDbInitializer()
+    public ResoViewDbInitializer()
     {
       AutomaticMigrationsEnabled = false;
     }
 
-    protected override void Seed(ApplicationDbContext context)
+    protected override void Seed(ResoViewDbContext context)
     {
-      var adminUser = new ApplicationUser()
+      var adminUser = new AppUser()
       {
+        FirstName = "Harpreet",
+        LastName = "Singh",
         UserName = "harpreetsingh0943",
         Email = "harpreetsingh0943@conestogac.on.ca",
         PasswordHash = new PasswordHasher().HashPassword("Xyz12345$"),
@@ -27,13 +29,13 @@ namespace ResoView.Migrations
 
       context.Users.Add(adminUser);
 
-      var userRoles = new List<ApplicationRole>()
+      var userRoles = new List<AppRole>()
       {
-        new ApplicationRole()
+        new AppRole()
         {
           Name = "admin"
         },
-        new ApplicationRole()
+        new AppRole()
         {
           Name = "member"
         }
