@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using ResoView.Constants;
@@ -17,18 +18,8 @@ namespace ResoView.Migrations
 
     protected override void Seed(ResoViewDbContext context)
     {
-      var adminUser = new AppUser()
-      {
-        FirstName = "Harpreet",
-        LastName = "Singh",
-        UserName = "harpreetsingh0943",
-        Email = "harpreetsingh0943@conestogac.on.ca",
-        PasswordHash = new PasswordHasher().HashPassword("Xyz12345$"),
-        SecurityStamp = new Guid().ToString(),
-        EmailConfirmed = true
-      };
-
-      context.Users.Add(adminUser);
+      var alreadySeeded = context.Users.Any();
+      if (alreadySeeded) return;
 
       var userRoles = new List<AppRole>
       {
@@ -41,16 +32,31 @@ namespace ResoView.Migrations
           Name = AppRoleConstant.Member
         }
       };
+
       foreach (var userRole in userRoles)
       {
-        userRole.Users.Add(new IdentityUserRole()
-        {
-          RoleId = userRole.Id,
-          UserId = adminUser.Id
-        });
         context.Roles.Add(userRole);
       }
 
+      var adminUser = new AppUser()
+      {
+        FirstName = "Harpreet",
+        LastName = "Singh",
+        UserName = "harpreetsingh0943@conestogac.on.ca",
+        Email = "harpreetsingh0943@conestogac.on.ca",
+        PasswordHash = new PasswordHasher().HashPassword("Xyz12345$"),
+        SecurityStamp = new Random().Next(50_000, 100_000).ToString(),
+        EmailConfirmed = true,
+        LockoutEnabled = true
+      };
+
+      adminUser.Roles.Add(new IdentityUserRole
+      {
+        RoleId = userRoles.Find(r => r.Name == AppRoleConstant.Admin).Id,
+        UserId = adminUser.Id
+      });
+
+      context.Users.Add(adminUser);
       context.SaveChanges();
     }
   }
