@@ -10,61 +10,66 @@ using ResoView.Models;
 
 namespace ResoView
 {
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-    public class ApplicationUserManager : UserManager<AppUser>
+  public class ApplicationUserManager : UserManager<AppUser>
+  {
+    public ApplicationUserManager(IUserStore<AppUser> store)
+      : base(store)
     {
-        public ApplicationUserManager(IUserStore<AppUser> store)
-            : base(store)
-        {
-        }
-
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
-        {
-            var manager = new ApplicationUserManager(new UserStore<AppUser>(context.Get<ResoViewDbContext>()));
-            // Configure validation logic for usernames
-            manager.UserValidator = new UserValidator<AppUser>(manager)
-            {
-                AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
-            };
-
-            // Configure validation logic for passwords
-            manager.PasswordValidator = new PasswordValidator
-            {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
-            };
-
-            // Configure user lockout defaults
-            manager.UserLockoutEnabledByDefault = true;
-            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            manager.MaxFailedAccessAttemptsBeforeLockout = 5;
-
-            var dataProtectionProvider = options.DataProtectionProvider;
-            if (dataProtectionProvider != null)
-            {
-                manager.UserTokenProvider = new DataProtectorTokenProvider<AppUser>(dataProtectionProvider.Create("ASP.NET Identity"));
-            }
-            return manager;
-        }
     }
 
-    public class ApplicationSignInManager : SignInManager<AppUser, string>
+    public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
+      IOwinContext context)
     {
-        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager) :
-            base(userManager, authenticationManager) { }
+      var manager = new ApplicationUserManager(new UserStore<AppUser>(context.Get<ResoViewDbContext>()));
+      // Configure validation logic for usernames
+      manager.UserValidator = new UserValidator<AppUser>(manager)
+      {
+        AllowOnlyAlphanumericUserNames = false,
+        RequireUniqueEmail = true
+      };
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(AppUser user)
-        {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-        }
+      // Configure validation logic for passwords
+      manager.PasswordValidator = new PasswordValidator
+      {
+        RequiredLength = 6,
+        RequireNonLetterOrDigit = true,
+        RequireDigit = true,
+        RequireLowercase = true,
+        RequireUppercase = true,
+      };
 
-        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
-        {
-            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
-        }
+      // Configure user lockout defaults
+      manager.UserLockoutEnabledByDefault = true;
+      manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(1);
+      manager.MaxFailedAccessAttemptsBeforeLockout = 3;
+
+      var dataProtectionProvider = options.DataProtectionProvider;
+      if (dataProtectionProvider != null)
+      {
+        manager.UserTokenProvider =
+          new DataProtectorTokenProvider<AppUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+      }
+
+      return manager;
     }
+  }
+
+  public class ApplicationSignInManager : SignInManager<AppUser, string>
+  {
+    public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager) :
+      base(userManager, authenticationManager)
+    {
+    }
+
+    public override Task<ClaimsIdentity> CreateUserIdentityAsync(AppUser user)
+    {
+      return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
+    }
+
+    public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options,
+      IOwinContext context)
+    {
+      return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+    }
+  }
 }

@@ -69,7 +69,7 @@ namespace ResoView
 
     public static void RedirectToReturnUrl(string returnUrl, HttpResponse response)
     {
-      if (!String.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
+      if (!string.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
       {
         response.Redirect(returnUrl);
       }
