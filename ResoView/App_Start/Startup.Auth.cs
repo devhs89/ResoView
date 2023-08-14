@@ -12,10 +12,18 @@ namespace ResoView
   {
     public void ConfigureAuth(IAppBuilder app)
     {
-      // Configure the db context, user manager and signin manager to use a single instance per request
-      app.CreatePerOwinContext(ResoViewDbContext.Create);
-      app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-      app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+      try
+      {
+        // Configure the db context, user manager and signin manager to use a single instance per request
+        app.CreatePerOwinContext(ResoViewDbContext.Create);
+        app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+        app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(@"Database connection failed!");
+        Console.WriteLine(e.Message);
+      }
 
       // Enable the application to use a cookie to store information for the signed in user
       // Configure the sign in cookie
