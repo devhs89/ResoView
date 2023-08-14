@@ -54,7 +54,7 @@
             <a class="nav-link" href="~/Cart" runat="server">Cart</a>
           </li>
         </ul>
-        <asp:LoginView runat="server" ViewStateMode="Disabled">
+        <asp:LoginView ID="LoginView" runat="server" ViewStateMode="Disabled">
           <AnonymousTemplate>
             <ul class="navbar-nav navbar-right">
               <li>
@@ -69,6 +69,9 @@
             <ul class="navbar-nav navbar-right">
               <li>
                 <a class="nav-link" href="~/Account/Manage" runat="server" title="Manage your account">Hello, <%: FullName %></a>
+              </li>
+              <li>
+                <asp:HyperLink CssClass="nav-link" ID="AdminPanelLink" NavigateUrl="~/Admin/AdminPanel" runat="server" Text="Admin Panel"></asp:HyperLink>
               </li>
               <li>
                 <asp:LoginStatus CssClass="nav-link" LogoutAction="Redirect" LogoutPageUrl="~/" LogoutText="Log off" OnLoggingOut="Unnamed_LoggingOut" runat="server" />
