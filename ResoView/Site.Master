@@ -48,7 +48,7 @@
             <a class="nav-link" href="~/" runat="server">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Product" runat="server">Products</a>
+            <a class="nav-link" href="~/Products" runat="server">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="~/Cart" runat="server">Cart</a>
@@ -84,9 +84,7 @@
   </nav>
   <div class="body-content d-flex flex-column vh-100 w-100">
     <div class="flex-grow-1">
-      <div class="container mt-custom">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-      </div>
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
     </div>
     <footer class="container-fluid py-5 text-bg-dark">
       <div class="row small text-center">
