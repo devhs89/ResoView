@@ -149,6 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminPanel.aspx" />
+    <Content Include="Admin\ManageProducts.aspx" />
+    <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="Admin\Web.config" />
     <Content Include="Product.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -364,6 +366,20 @@
     <Compile Include="Admin\AdminPanel.aspx.designer.cs">
       <DependentUpon>AdminPanel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ManageProducts.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Constants\AppRoleConstant.cs" />
     <Compile Include="Constants\CustomClaimConstant.cs" />
@@ -371,7 +387,12 @@
     <Compile Include="Migrations\202308130300178_CreateInitialIdentityTables.designer.cs">
       <DependentUpon>202308130300178_CreateInitialIdentityTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308150146010_AddProductsTable.cs" />
+    <Compile Include="Migrations\202308150146010_AddProductsTable.designer.cs">
+      <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppRoleModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ResoViewDbContext.cs" />
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -443,6 +464,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202308130300178_CreateInitialIdentityTables.resx">
       <DependentUpon>202308130300178_CreateInitialIdentityTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308150146010_AddProductsTable.resx">
+      <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

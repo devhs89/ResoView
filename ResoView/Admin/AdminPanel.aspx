@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Admin Dashboard" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="AdminPanel.aspx.cs" Inherits="ResoView.Admin.AdminPanel" %>
 
-<asp:Content ContentPlaceHolderID="MainContent" ID="Content1" runat="server">
+<asp:Content ContentPlaceHolderID="MainContent" ID="AdminPanel" runat="server">
   <div class="container">
     <h2>Welcome to the Admin Dashboard</h2>
     <p>Here, you can manage various aspects of the website.</p>
