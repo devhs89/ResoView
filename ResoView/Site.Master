@@ -36,8 +36,8 @@
     </Scripts>
   </asp:ScriptManager>
 
-  <nav class="bg-dark navbar navbar-dark navbar-expand-sm navbar-toggleable-sm shadow-sm">
-    <div class="container">
+  <nav class="bg-dark fixed-top navbar navbar-dark navbar-expand-sm navbar-toggleable-sm shadow-sm">
+    <div class="container-fluid">
       <a class="navbar-brand" href="~/" runat="server">ResoView</a>
       <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target=".navbar-collapse" data-bs-toggle="collapse" title="Toggle navigation" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -82,12 +82,21 @@
       </div>
     </div>
   </nav>
-  <div class="body-content container">
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
-    <hr />
-    <footer>
-      <p>&copy; <%: DateTime.Now.Year %> - Harpreet Singh</p>
+  <div class="body-content d-flex flex-column vh-100 w-100">
+    <div class="flex-grow-1">
+      <div class="container mt-custom">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+      </div>
+    </div>
+    <footer class="container-fluid py-5 text-bg-dark">
+      <div class="row small text-center">
+        <div class="col-12">
+          <div>ResoView</div>
+        </div>
+        <div class="col-12">
+          <div>&copy; <%: DateTime.Now.Year %> - Harpreet Singh</div>
+        </div>
+      </div>
     </footer>
   </div>
 </form>
