@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="Site.Master" CodeBehind="Checkout.aspx.cs" Inherits="ResoView.Checkout" %>
+﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="~/Sales/Checkout.aspx.cs" Inherits="ResoView.Checkout" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
   <main class="container mt-custom">
