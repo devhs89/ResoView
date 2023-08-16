@@ -36,7 +36,8 @@ namespace ResoView
       SuccessMessage = "Order placed successfully!";
       SuccessMessagePlaceHolder.Visible = true;
       Session.Remove("Cart");
-      Response.Redirect("Products.aspx");
+      GridViewCheckout.DataSource = new List<CartItem>();
+      GridViewCheckout.DataBind();
     }
 
     protected string SuccessMessage { get; private set; }

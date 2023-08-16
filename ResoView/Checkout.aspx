@@ -12,12 +12,12 @@
       <Columns>
         <asp:BoundField DataField="Product.Name" HeaderText="Product" />
         <asp:BoundField DataField="Product.Price" DataFormatString="{0:C}" HeaderText="Price" />
-        <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+        <asp:BoundField DataField="ProductQuantity" HeaderText="Quantity" />
       </Columns>
     </asp:GridView>
     <div class="mt-3">
       <h4>Total: <asp:Label CssClass="text-primary" ID="LabelTotal" runat="server" /></h4>
-      <asp:Button CssClass="btn btn-primary" ID="btnPlaceOrder" OnClick="btnPlaceOrder_Click" runat="server" Text="Place Order" />
+      <asp:Button CssClass="btn btn-primary mt-3" ID="btnPlaceOrder" OnClick="btnPlaceOrder_Click" runat="server" Text="Place Order" />
     </div>
   </main>
 </asp:Content>
