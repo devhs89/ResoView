@@ -10,17 +10,17 @@ using ResoView.Models;
 
 namespace ResoView
 {
-  public class ApplicationUserManager : UserManager<AppUser>
+  public class ResoViewUserManager : UserManager<AppUser>
   {
-    public ApplicationUserManager(IUserStore<AppUser> store)
+    public ResoViewUserManager(IUserStore<AppUser> store)
       : base(store)
     {
     }
 
-    public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
+    public static ResoViewUserManager Create(IdentityFactoryOptions<ResoViewUserManager> options,
       IOwinContext context)
     {
-      var manager = new ApplicationUserManager(new UserStore<AppUser>(context.Get<ResoViewDbContext>()));
+      var manager = new ResoViewUserManager(new UserStore<AppUser>(context.Get<ResoViewDbContext>()));
       // Configure validation logic for usernames
       manager.UserValidator = new UserValidator<AppUser>(manager)
       {
@@ -54,22 +54,36 @@ namespace ResoView
     }
   }
 
-  public class ApplicationSignInManager : SignInManager<AppUser, string>
+  public class ResoViewSignInManager : SignInManager<AppUser, string>
   {
-    public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager) :
+    public ResoViewSignInManager(ResoViewUserManager userManager, IAuthenticationManager authenticationManager) :
       base(userManager, authenticationManager)
     {
     }
 
     public override Task<ClaimsIdentity> CreateUserIdentityAsync(AppUser user)
     {
-      return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
+      return user.GenerateUserIdentityAsync((ResoViewUserManager)UserManager);
     }
 
-    public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options,
+    public static ResoViewSignInManager Create(IdentityFactoryOptions<ResoViewSignInManager> options,
       IOwinContext context)
     {
-      return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+      return new ResoViewSignInManager(context.GetUserManager<ResoViewUserManager>(), context.Authentication);
+    }
+  }
+
+  public class ResoViewRoleManager : RoleManager<AppRole>
+  {
+    public ResoViewRoleManager(IRoleStore<AppRole, string> roleStore) : base(roleStore)
+    {
+    }
+
+    public static ResoViewRoleManager Create(IdentityFactoryOptions<ResoViewRoleManager> options,
+      IOwinContext context)
+    {
+      var roleStore = new RoleStore<AppRole>(context.Get<ResoViewDbContext>());
+      return new ResoViewRoleManager(roleStore);
     }
   }
 }

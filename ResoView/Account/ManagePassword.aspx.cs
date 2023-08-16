@@ -17,14 +17,14 @@ namespace ResoView.Account
             private set;
         }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        private bool HasPassword(ResoViewUserManager manager)
         {
             return manager.HasPassword(User.Identity.GetUserId());
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
 
             if (!IsPostBack)
             {
@@ -53,8 +53,8 @@ namespace ResoView.Account
         {
             if (IsValid)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
+                var signInManager = Context.GetOwinContext().Get<ResoViewSignInManager>();
                 IdentityResult result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
                 if (result.Succeeded)
                 {
@@ -74,7 +74,7 @@ namespace ResoView.Account
             if (IsValid)
             {
                 // Create the local login info and link the local account to the user
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
                 IdentityResult result = manager.AddPassword(User.Identity.GetUserId(), password.Text);
                 if (result.Succeeded)
                 {

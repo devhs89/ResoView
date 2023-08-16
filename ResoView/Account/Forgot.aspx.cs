@@ -19,7 +19,7 @@ namespace ResoView.Account
             if (IsValid)
             {
                 // Validate the user's email address
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
                 AppUser user = manager.FindByName(Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {

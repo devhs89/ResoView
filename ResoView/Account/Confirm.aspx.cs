@@ -22,7 +22,7 @@ namespace ResoView.Account
             string userId = IdentityHelper.GetUserIdFromRequest(Request);
             if (code != null && userId != null)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
                 var result = manager.ConfirmEmail(userId, code);
                 if (result.Succeeded)
                 {

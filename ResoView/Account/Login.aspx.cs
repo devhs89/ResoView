@@ -22,8 +22,8 @@ namespace ResoView.Account
     {
       if (!IsValid) return;
 
-      var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-      var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+      var userManager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
+      var signinManager = Context.GetOwinContext().GetUserManager<ResoViewSignInManager>();
 
       var appUser = await userManager.Users.SingleOrDefaultAsync(user => user.Email == Email.Text);
       if (appUser == null)

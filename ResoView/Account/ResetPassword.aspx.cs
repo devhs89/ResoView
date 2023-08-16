@@ -22,7 +22,7 @@ namespace ResoView.Account
             string code = IdentityHelper.GetCodeFromRequest(Request);
             if (code != null)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
 
                 var user = manager.FindByName(Email.Text);
                 if (user == null)
