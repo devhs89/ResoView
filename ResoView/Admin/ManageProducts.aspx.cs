@@ -11,10 +11,8 @@ namespace ResoView.Admin
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (!IsPostBack)
-      {
-        BindGridView();
-      }
+      if (IsPostBack) return;
+      BindGridView();
     }
 
     private void BindGridView()
@@ -43,36 +41,50 @@ namespace ResoView.Admin
 
     protected void GridViewProducts_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
+      Page.Validate("EditUpdateValidationGroup");
+      if (!Page.IsValid) return;
+
       var row = GridViewProducts.Rows[e.RowIndex];
       var id = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex]?.Values?["Id"]);
-      var updatedProductName = (row.Cells[1].Controls[0] as TextBox)?.Text;
-      var updatedPrice = Convert.ToDecimal((row.Cells[2].Controls[0] as TextBox)?.Text);
-      var updatedDescription = (row.Cells[3].Controls[0] as TextBox)?.Text;
+      var updatedProductName = (row.FindControl("EditProductName") as TextBox)?.Text;
+      var updatedPrice = Convert.ToDecimal((row.FindControl("EditProductPrice") as TextBox)?.Text);
+      var updatedDescription = (row.FindControl("EditProductDescription") as TextBox)?.Text;
 
       using (var dbContext = new ResoViewDbContext())
       {
         var productToUpdate = dbContext.Products.Find(id);
-        if (productToUpdate != null)
-        {
-          productToUpdate.Name = updatedProductName;
-          productToUpdate.Price = updatedPrice;
-          productToUpdate.Description = updatedDescription;
-          dbContext.SaveChanges();
-        }
+        if (productToUpdate == null) return;
+        productToUpdate.Name = updatedProductName;
+        productToUpdate.Price = updatedPrice;
+        productToUpdate.Description = updatedDescription;
+        dbContext.SaveChanges();
+        GridViewProducts.EditIndex = -1;
+        BindGridView();
       }
-
-      GridViewProducts.EditIndex = -1;
-      BindGridView();
     }
 
 
     protected void GridViewProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-      BindGridView();
+      var id = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex]?.Values?["Id"]);
+      using (var dbContext = new ResoViewDbContext())
+      {
+        var productToDelete = dbContext.Products.SingleOrDefault(p => p.Id == id);
+        if (productToDelete == null) return;
+        dbContext.Products.Remove(productToDelete);
+        dbContext.SaveChanges();
+        GridViewProducts.EditIndex = -1;
+        BindGridView();
+      }
     }
+
 
     protected void btnAddProduct_Click(object sender, EventArgs e)
     {
+      // Validate the page controls
+      Page.Validate("AddProductGroup");
+      if (!Page.IsValid) return;
+
       var newProductName = NewProductName.Text;
       var newPrice = Convert.ToDecimal(NewPrice.Text);
       var newDescription = NewDescription.Text;
@@ -88,10 +100,9 @@ namespace ResoView.Admin
 
         dbContext.Products.Add(newProduct);
         dbContext.SaveChanges();
+        ClearNewProductForm();
+        BindGridView();
       }
-
-      BindGridView();
-      ClearNewProductForm();
     }
 
     private void ClearNewProductForm()
