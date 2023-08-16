@@ -8,16 +8,16 @@
         <p class="text-success"><%: SuccessMessage %></p>
       </asp:PlaceHolder>
     </div>
-    <div class="col-md-12">
-      <div class="row">
+    <div class="justify-content-center row">
+      <div class="col-md-6">
         <h4>Change your account settings</h4>
         <hr />
-        <dl class="dl-horizontal">
-          <dt>Password:</dt>
-          <dd>
-            <asp:HyperLink ID="ChangePassword" NavigateUrl="/Account/ManagePassword" runat="server" Text="[Change]" Visible="false" />
-          </dd>
-        </dl>
+        <div class="row">
+          <div class="col">
+            <asp:Label AssociatedControlID="ChangePassword" CssClass="me-3" runat="server" Text="Password:"></asp:Label>
+            <asp:HyperLink CssClass="text-decoration-none" ID="ChangePassword" NavigateUrl="/Account/ManagePassword.aspx" runat="server" Text="Change" />
+          </div>
+        </div>
       </div>
     </div>
   </main>
