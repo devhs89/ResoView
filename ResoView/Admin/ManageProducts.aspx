@@ -28,6 +28,15 @@
                 <asp:RegularExpressionValidator ControlToValidate="EditProductPrice" CssClass="text-danger" Display="Dynamic" ErrorMessage="Product price must be a decimal value" runat="server" ValidationExpression="^\d+(\.\d{1,2})?$"></asp:RegularExpressionValidator>
               </EditItemTemplate>
             </asp:TemplateField>
+            <asp:TemplateField HeaderText="Image Url">
+              <ItemTemplate>
+                <asp:Label ID="ProductImageUrl" runat="server" Text='<%# Eval("ImageUrl") %>' />
+              </ItemTemplate>
+              <EditItemTemplate>
+                <asp:TextBox CssClass="form-control" ID="EditProductImageUrl" runat="server" Text='<%# Bind("ImageUrl") %>' />
+                <asp:RequiredFieldValidator ControlToValidate="EditProductImageUrl" CssClass="text-danger" Display="Dynamic" ErrorMessage="Image url field is required." runat="server" />
+              </EditItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Description">
               <ItemTemplate>
                 <asp:Label ID="ProductDescription" runat="server" Text='<%# Eval("Description") %>' />
@@ -64,6 +73,10 @@
           <asp:TextBox CssClass="form-control" ID="NewPrice" placeholder="Product Price" runat="server" ValidationGroup="AddProductGroup" />
           <asp:RequiredFieldValidator ControlToValidate="NewPrice" CssClass="text-danger" Display="Dynamic" ErrorMessage="Product price field is required." runat="server" />
           <asp:RegularExpressionValidator ControlToValidate="NewPrice" CssClass="text-danger" Display="Dynamic" ErrorMessage="Product price must be a decimal value" runat="server" ValidationExpression="^\d+(\.\d{1,2})?$"></asp:RegularExpressionValidator>
+        </div>
+        <div class="col-12 mb-3">
+          <asp:TextBox CssClass="form-control" ID="NewImageUrl" placeholder="Image URL" runat="server" ValidationGroup="AddProductGroup" />
+          <asp:RequiredFieldValidator ControlToValidate="NewImageUrl" CssClass="text-danger" Display="Dynamic" ErrorMessage="Image URL field is required." runat="server" />
         </div>
         <div class="col-12 mb-3">
           <asp:TextBox CssClass="form-control" ID="NewDescription" placeholder="Product Description" runat="server" TextMode="Multiline" ValidationGroup="AddProductGroup" />

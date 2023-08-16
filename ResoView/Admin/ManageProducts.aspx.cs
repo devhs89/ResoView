@@ -48,6 +48,7 @@ namespace ResoView.Admin
       var id = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex]?.Values?["Id"]);
       var updatedProductName = (row.FindControl("EditProductName") as TextBox)?.Text;
       var updatedPrice = Convert.ToDecimal((row.FindControl("EditProductPrice") as TextBox)?.Text);
+      var updatedImageUrl = (row.FindControl("EditProductImageUrl") as TextBox)?.Text;
       var updatedDescription = (row.FindControl("EditProductDescription") as TextBox)?.Text;
 
       using (var dbContext = new ResoViewDbContext())
@@ -57,6 +58,7 @@ namespace ResoView.Admin
         productToUpdate.Name = updatedProductName;
         productToUpdate.Price = updatedPrice;
         productToUpdate.Description = updatedDescription;
+        productToUpdate.ImageUrl = updatedImageUrl;
         dbContext.SaveChanges();
         GridViewProducts.EditIndex = -1;
         BindGridView();
@@ -87,6 +89,7 @@ namespace ResoView.Admin
 
       var newProductName = NewProductName.Text;
       var newPrice = Convert.ToDecimal(NewPrice.Text);
+      var newImageUrl = NewImageUrl.Text;
       var newDescription = NewDescription.Text;
 
       using (var dbContext = new ResoViewDbContext())
@@ -95,6 +98,7 @@ namespace ResoView.Admin
         {
           Name = newProductName,
           Price = newPrice,
+          ImageUrl = newImageUrl,
           Description = newDescription
         };
 
@@ -109,6 +113,7 @@ namespace ResoView.Admin
     {
       NewProductName.Text = string.Empty;
       NewPrice.Text = string.Empty;
+      NewImageUrl.Text = string.Empty;
       NewDescription.Text = string.Empty;
     }
   }

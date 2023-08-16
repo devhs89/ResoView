@@ -314,6 +314,10 @@
     <Compile Include="Migrations\202308150146010_AddProductsTable.designer.cs">
       <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.cs" />
+    <Compile Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.designer.cs">
+      <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppRoleModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ResoViewDbContext.cs" />
@@ -390,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308150146010_AddProductsTable.resx">
       <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.resx">
+      <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

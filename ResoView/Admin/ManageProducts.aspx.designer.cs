@@ -42,6 +42,15 @@ namespace ResoView.Admin
         protected global::System.Web.UI.WebControls.TextBox NewPrice;
 
         /// <summary>
+        /// NewImageUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewImageUrl;
+
+        /// <summary>
         /// NewDescription control.
         /// </summary>
         /// <remarks>
