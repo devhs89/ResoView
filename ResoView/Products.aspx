@@ -3,6 +3,14 @@
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
 
   <main class="container mt-custom">
+    <div class="align-items-center row">
+      <div class="col-md-6 mb-3">
+        <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="Cart.aspx" runat="server" Text="Go to Cart"></asp:HyperLink>
+      </div>
+      <div class="col-md-6 mb-3 text-md-end">
+        <asp:Label CssClass="px-3 py-1 rounded text-md-end bg-success bg-opacity-25 text-success" ID="LabelCartItemsCount" runat="server" Visible="False"></asp:Label>
+      </div>
+    </div>
     <div class="table-responsive">
       <asp:GridView AutoGenerateColumns="False" CssClass="table table-bordered table-striped" ID="GridViewProducts" runat="server">
         <Columns>
@@ -20,7 +28,7 @@
           </asp:TemplateField>
           <asp:TemplateField HeaderText="Add to Cart">
             <ItemTemplate>
-              <asp:Button CommandArgument="<%# Container.DataItemIndex %>" CommandName="AddToCart" CssClass="btn btn-primary" ID="btnAddToCart" OnClick="btnAddToCart_Click" runat="server" Text="Add to Cart" />
+              <asp:Button CommandArgument="<%# Container.DataItemIndex %>" CommandName="AddToCart" CssClass="btn btn-sm btn-outline-primary" ID="btnAddToCart" OnClick="btnAddToCart_Click" runat="server" Text="Add to Cart" />
             </ItemTemplate>
           </asp:TemplateField>
         </Columns>

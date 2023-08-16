@@ -11,53 +11,44 @@ namespace ResoView
 {
 
 
-    public partial class Cart
+    public partial class Checkout
     {
 
         /// <summary>
-        /// cartErrorsBulletedList control.
+        /// SuccessMessagePlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList cartErrorsBulletedList;
+        protected global::System.Web.UI.WebControls.PlaceHolder SuccessMessagePlaceHolder;
 
         /// <summary>
-        /// cartItems control.
+        /// GridViewCheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartItems;
+        protected global::System.Web.UI.WebControls.GridView GridViewCheckout;
 
         /// <summary>
-        /// multiSelectListBox control.
+        /// LabelTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox multiSelectListBox;
+        protected global::System.Web.UI.WebControls.Label LabelTotal;
 
         /// <summary>
-        /// continueShopping control.
+        /// btnPlaceOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink continueShopping;
-
-        /// <summary>
-        /// checkOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink checkOut;
+        protected global::System.Web.UI.WebControls.Button btnPlaceOrder;
 
         /// <summary>
         /// Master property.

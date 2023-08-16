@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ResoView.Dtos;
 using ResoView.Models;
 
 namespace ResoView
@@ -28,7 +29,20 @@ namespace ResoView
 
       var products = GetProducts();
       var selectedProduct = products[rowIndex];
-      // TODO: Cart logic here
+
+      if (Session["Cart"] == null)
+      {
+        var cart = new List<CartItem>();
+        Session["Cart"] = cart;
+      }
+
+      var cartItems = (List<CartItem>)Session["Cart"];
+      cartItems.Add(new CartItem
+      {
+        Product = selectedProduct,
+        ProductQuantity = quantity
+      });
+      UpdateCartItemsCountLabel();
     }
 
     private static List<ProductModel> GetProducts()
@@ -37,6 +51,21 @@ namespace ResoView
       {
         return dbContext.Products.ToList();
       }
+    }
+
+    private void UpdateCartItemsCountLabel()
+    {
+      var cartItemsCount = GetCartItemsCount();
+      if (cartItemsCount <= 0) return;
+      var plural = cartItemsCount > 1 ? "products" : "product";
+      LabelCartItemsCount.Text = $@"{cartItemsCount} {plural} added to cart";
+      LabelCartItemsCount.Visible = true;
+    }
+
+    private int GetCartItemsCount()
+    {
+      var cartItems = (List<CartItem>)Session["Cart"];
+      return cartItems.Count;
     }
   }
 }
