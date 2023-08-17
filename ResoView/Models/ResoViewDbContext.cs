@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -10,6 +11,8 @@ namespace ResoView.Models
       : base("DefaultConnection", throwIfV1Schema: false)
     {
     }
+
+    public DbSet<ProductModel> Products { get; set; }
 
     public static ResoViewDbContext Create()
     {

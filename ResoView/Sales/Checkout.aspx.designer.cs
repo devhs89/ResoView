@@ -7,66 +7,48 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ResoView.Account
+namespace ResoView
 {
 
 
-    public partial class ManagePassword
+    public partial class Checkout
     {
 
         /// <summary>
-        /// CurrentPasswordLabel control.
+        /// SuccessMessagePlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurrentPasswordLabel;
+        protected global::System.Web.UI.WebControls.PlaceHolder SuccessMessagePlaceHolder;
 
         /// <summary>
-        /// CurrentPassword control.
+        /// GridViewCheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CurrentPassword;
+        protected global::System.Web.UI.WebControls.GridView GridViewCheckout;
 
         /// <summary>
-        /// NewPasswordLabel control.
+        /// LabelTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordLabel;
+        protected global::System.Web.UI.WebControls.Label LabelTotal;
 
         /// <summary>
-        /// NewPassword control.
+        /// btnPlaceOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPassword;
-
-        /// <summary>
-        /// ConfirmNewPasswordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmNewPasswordLabel;
-
-        /// <summary>
-        /// ConfirmNewPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmNewPassword;
+        protected global::System.Web.UI.WebControls.Button btnPlaceOrder;
 
         /// <summary>
         /// Master property.

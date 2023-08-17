@@ -148,23 +148,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Product.aspx" />
-    <Content Include="Account\AddPhoneNumber.aspx" />
-    <Content Include="Account\Confirm.aspx" />
-    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Admin\AdminPanel.aspx" />
+    <Content Include="Admin\ManageProducts.aspx" />
+    <Content Include="Admin\ManageUsers.aspx" />
+    <Content Include="Admin\Web.config" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
-    <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
-    <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="Account\ResetPassword.aspx" />
-    <Content Include="Account\ResetPasswordConfirmation.aspx" />
-    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Cart.aspx" />
+    <Content Include="Assets\Images\projector1.jpg" />
+    <Content Include="Assets\Images\projector2.jpg" />
+    <Content Include="Assets\Images\projector3.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -187,6 +182,10 @@
     <Content Include="docker.env" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Products.aspx" />
+    <Content Include="Sales\Cart.aspx" />
+    <Content Include="Sales\Checkout.aspx" />
+    <Content Include="Sales\Web.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -250,27 +249,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.designer.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.designer.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,26 +270,12 @@
     <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ManageLogins.aspx.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ManageLogins.aspx.designer.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\ManagePassword.aspx.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\ManagePassword.aspx.designer.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -320,67 +284,49 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    <Compile Include="Admin\AdminPanel.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    <Compile Include="Admin\AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ResetPassword.aspx.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    <Compile Include="Admin\ManageProducts.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ResetPassword.aspx.designer.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    <Compile Include="Admin\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    <Compile Include="Admin\ManageUsers.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    <Compile Include="Admin\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Constants\AppRoleConstant.cs" />
     <Compile Include="Constants\CustomClaimConstant.cs" />
+    <Compile Include="Dtos\CartItem.cs" />
     <Compile Include="Migrations\202308130300178_CreateInitialIdentityTables.cs" />
     <Compile Include="Migrations\202308130300178_CreateInitialIdentityTables.designer.cs">
       <DependentUpon>202308130300178_CreateInitialIdentityTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308150146010_AddProductsTable.cs" />
+    <Compile Include="Migrations\202308150146010_AddProductsTable.designer.cs">
+      <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.cs" />
+    <Compile Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.designer.cs">
+      <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppRoleModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ResoViewDbContext.cs" />
-    <Compile Include="Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Cart.aspx.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,7 +339,28 @@
     </Compile>
     <Compile Include="Migrations\ResoViewDbInitializer.cs" />
     <Compile Include="Models\AppUserModel.cs" />
+    <Compile Include="Products.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Checkout.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,6 +401,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202308130300178_CreateInitialIdentityTables.resx">
       <DependentUpon>202308130300178_CreateInitialIdentityTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308150146010_AddProductsTable.resx">
+      <DependentUpon>202308150146010_AddProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.resx">
+      <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

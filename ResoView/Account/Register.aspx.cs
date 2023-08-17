@@ -13,8 +13,8 @@ namespace ResoView.Account
   {
     protected void CreateUser_Click(object sender, EventArgs e)
     {
-      var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-      var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+      var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
+      var signInManager = Context.GetOwinContext().Get<ResoViewSignInManager>();
       var user = new AppUser
         { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Email.Text, Email = Email.Text };
       var result = manager.Create(user, Password.Text);

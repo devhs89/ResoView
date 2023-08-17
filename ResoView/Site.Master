@@ -36,8 +36,8 @@
     </Scripts>
   </asp:ScriptManager>
 
-  <nav class="bg-dark navbar navbar-dark navbar-expand-sm navbar-toggleable-sm shadow">
-    <div class="container">
+  <nav class="bg-dark fixed-top navbar navbar-dark navbar-expand-sm navbar-toggleable-sm shadow-sm">
+    <div class="container-fluid">
       <a class="navbar-brand" href="~/" runat="server">ResoView</a>
       <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target=".navbar-collapse" data-bs-toggle="collapse" title="Toggle navigation" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -45,30 +45,33 @@
       <div class="collapse d-sm-inline-flex justify-content-between navbar-collapse">
         <ul class="flex-grow-1 navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="~/" runat="server">Home</a>
+            <asp:HyperLink CssClass="nav-link" ID="HomeLink" NavigateUrl="~/" runat="server">Home</asp:HyperLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Product" runat="server">Products</a>
+            <asp:HyperLink CssClass="nav-link" ID="ProductsLink" NavigateUrl="~/Products" runat="server">Products</asp:HyperLink >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Cart" runat="server">Cart</a>
+            <asp:HyperLink CssClass="nav-link" ID="CartLink" NavigateUrl="~/Sales/Cart" runat="server">Cart</asp:HyperLink >
           </li>
         </ul>
-        <asp:LoginView runat="server" ViewStateMode="Disabled">
+        <asp:LoginView ID="LoginView" runat="server" ViewStateMode="Disabled">
           <AnonymousTemplate>
             <ul class="navbar-nav navbar-right">
               <li>
-                <a class="nav-link" href="~/Account/Register" runat="server">Register</a>
+                <asp:HyperLink CssClass="nav-link" ID="RegisterLink" NavigateUrl="~/Account/Register" runat="server">Register</asp:HyperLink >
               </li>
               <li>
-                <a class="nav-link" href="~/Account/Login" runat="server">Log in</a>
+                <asp:HyperLink CssClass="nav-link" ID="LoginLink" NavigateUrl="~/Account/Login" runat="server">Login</asp:HyperLink >
               </li>
             </ul>
           </AnonymousTemplate>
           <LoggedInTemplate>
             <ul class="navbar-nav navbar-right">
               <li>
-                <a class="nav-link" href="~/Account/Manage" runat="server" title="Manage your account">Hello, <%: FullName %></a>
+                <asp:HyperLink CssClass="nav-link" ID="ManageAccountLink" NavigateUrl="~/Account/Manage" runat="server" title="Manage your account">Hello, <%: FullName %></asp:HyperLink >
+              </li>
+              <li>
+                <asp:HyperLink CssClass="nav-link" ID="AdminPanelLink" NavigateUrl="~/Admin/AdminPanel" runat="server" Text="Admin Panel"></asp:HyperLink>
               </li>
               <li>
                 <asp:LoginStatus CssClass="nav-link" LogoutAction="Redirect" LogoutPageUrl="~/" LogoutText="Log off" OnLoggingOut="Unnamed_LoggingOut" runat="server" />
@@ -79,12 +82,19 @@
       </div>
     </div>
   </nav>
-  <div class="body-content container">
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
-    <hr />
-    <footer>
-      <p>&copy; <%: DateTime.Now.Year %> - Harpreet Singh</p>
+  <div class="body-content d-flex flex-column vh-100 w-100">
+    <div class="flex-grow-1">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    <footer class="container-fluid py-5 text-bg-dark">
+      <div class="row small text-center">
+        <div class="col-12">
+          <div>ResoView</div>
+        </div>
+        <div class="col-12">
+          <div>&copy; <%: DateTime.Now.Year %> - Harpreet Singh</div>
+        </div>
+      </div>
     </footer>
   </div>
 </form>

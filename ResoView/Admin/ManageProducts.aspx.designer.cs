@@ -7,66 +7,66 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ResoView.Account
+namespace ResoView.Admin
 {
 
 
-    public partial class ManagePassword
+    public partial class ManageProducts
     {
 
         /// <summary>
-        /// CurrentPasswordLabel control.
+        /// GridViewProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurrentPasswordLabel;
+        protected global::System.Web.UI.WebControls.GridView GridViewProducts;
 
         /// <summary>
-        /// CurrentPassword control.
+        /// NewProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CurrentPassword;
+        protected global::System.Web.UI.WebControls.TextBox NewProductName;
 
         /// <summary>
-        /// NewPasswordLabel control.
+        /// NewPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordLabel;
+        protected global::System.Web.UI.WebControls.TextBox NewPrice;
 
         /// <summary>
-        /// NewPassword control.
+        /// NewImageUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPassword;
+        protected global::System.Web.UI.WebControls.TextBox NewImageUrl;
 
         /// <summary>
-        /// ConfirmNewPasswordLabel control.
+        /// NewDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmNewPasswordLabel;
+        protected global::System.Web.UI.WebControls.TextBox NewDescription;
 
         /// <summary>
-        /// ConfirmNewPassword control.
+        /// AddProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmNewPassword;
+        protected global::System.Web.UI.WebControls.Button AddProduct;
 
         /// <summary>
         /// Master property.

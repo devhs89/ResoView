@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -13,19 +11,14 @@ namespace ResoView.Models
     public string FirstName { get; set; }
     public string LastName { get; set; }
 
-    private ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
+    private ClaimsIdentity GenerateUserIdentity(ResoViewUserManager manager)
     {
       var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
-      var claims = new List<Claim>()
-      {
-        new Claim(CustomClaimConstant.FullName, $"{FirstName} {LastName}"),
-        new Claim(ClaimTypes.Role, this.Roles.FirstOrDefault()?.RoleId)
-      };
-      userIdentity.AddClaims(claims);
+      userIdentity.AddClaim(new Claim(CustomClaimConstant.FullName, $"{FirstName} {LastName}"));
       return userIdentity;
     }
 
-    public Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
+    public Task<ClaimsIdentity> GenerateUserIdentityAsync(ResoViewUserManager manager)
     {
       return Task.FromResult(GenerateUserIdentity(manager));
     }
