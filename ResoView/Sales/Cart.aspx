@@ -1,4 +1,12 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/Sales/Cart.aspx.cs" Inherits="ResoView.Cart" %>
+﻿<%--
+  - Copyright 2023, Group 2
+  - Bhavna, Bhavna (8864264)
+  - Deepak, Mikkilneni Jeevarathnam (8850079)
+  - Harpreet Singh (8870943)
+  - Pratharan Sai Rupak Reddy, Gondi (8876529)
+--%>
+
+<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/Sales/Cart.aspx.cs" Inherits="ResoView.Cart" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
   <main aria-labelledby="title" class="container mt-custom">
@@ -31,10 +39,10 @@
     </div>
     <div class="row">
       <div class="col-auto mb-3">
-        <asp:HyperLink CssClass="btn btn-outline-dark" ID="continueShopping" NavigateUrl="Products.aspx" runat="server" Text="Continue Shopping"></asp:HyperLink>
+        <asp:HyperLink CssClass="btn btn-outline-dark" ID="continueShopping" NavigateUrl="~/Products" runat="server" Text="Continue Shopping"></asp:HyperLink>
       </div>
       <div class="col-auto mb-3">
-        <asp:HyperLink CssClass="btn btn-primary" ID="checkOut" NavigateUrl="Checkout.aspx" runat="server" Text="Checkout" />
+        <asp:HyperLink CssClass="btn btn-primary" ID="checkOut" NavigateUrl="~/Sales/Checkout" runat="server" Text="Checkout" />
       </div>
     </div>
   </main>
