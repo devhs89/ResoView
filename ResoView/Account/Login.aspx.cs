@@ -45,7 +45,6 @@ namespace ResoView.Account
           ShowLoginError();
           break;
         case SignInStatus.Failure:
-          break;
         default:
           ShowLoginError(@"Invalid login attempt", 403);
           break;

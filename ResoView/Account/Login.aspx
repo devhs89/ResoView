@@ -43,8 +43,9 @@
             </div>
           </div>
         </div>
+        <hr />
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 text-center">
             <asp:HyperLink CssClass="page-link text-primary" ID="RegisterHyperLink" runat="server" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
           </div>
         </div>
