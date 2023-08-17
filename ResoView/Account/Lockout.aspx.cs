@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿/*
+ * Copyright 2023, Group 2
+ * Harpreet Singh (8870943)
+ * Pratharan Sai Rupak Reddy, Gondi ()
+ * Deepak, Mikkilneni Jeevarathnam (8850079)
+ * Bhavna, Bhavna (8864264)
+ */
+
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ResoView.Account
 {
-    public partial class Lockout : System.Web.UI.Page
+  public partial class Lockout : Page
+  {
+    protected void Page_Load(object sender, EventArgs e)
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+  }
 }

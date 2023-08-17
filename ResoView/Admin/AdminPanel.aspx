@@ -1,4 +1,12 @@
-﻿<%@ Page Title="Admin Dashboard" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="AdminPanel.aspx.cs" Inherits="ResoView.Admin.AdminPanel" %>
+﻿<%--
+  - Copyright 2023, Group 2
+  - Bhavna, Bhavna (8864264)
+  - Deepak, Mikkilneni Jeevarathnam (8850079)
+  - Harpreet Singh (8870943)
+  - Pratharan Sai Rupak Reddy, Gondi ()
+--%>
+
+<%@ Page Title="Admin Dashboard" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="AdminPanel.aspx.cs" Inherits="ResoView.Admin.AdminPanel" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="AdminPanel" runat="server">
   <main class="container mt-custom">

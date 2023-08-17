@@ -1,4 +1,12 @@
-﻿<%@ Page Title="Products" Language="C#" MasterPageFile="Site.Master" CodeBehind="Products.aspx.cs" Inherits="ResoView.Products" %>
+﻿<%--
+  - Copyright 2023, Group 2
+  - Bhavna, Bhavna (8864264)
+  - Deepak, Mikkilneni Jeevarathnam (8850079)
+  - Harpreet Singh (8870943)
+  - Pratharan Sai Rupak Reddy, Gondi ()
+--%>
+
+<%@ Page Title="Products" Language="C#" MasterPageFile="Site.Master" CodeBehind="Products.aspx.cs" Inherits="ResoView.Products" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
 

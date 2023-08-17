@@ -1,4 +1,12 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ResoView.Account.Login" Async="true" %>
+﻿<%--
+  - Copyright 2023, Group 2
+  - Bhavna, Bhavna (8864264)
+  - Deepak, Mikkilneni Jeevarathnam (8850079)
+  - Harpreet Singh (8870943)
+  - Pratharan Sai Rupak Reddy, Gondi ()
+--%>
+
+<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ResoView.Account.Login" Async="true" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
   <main aria-labelledby="title" class="container mt-custom">
