@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Copyright 2023, Group 2
+ * Harpreet Singh (8870943)
+ * Pratharan Sai Rupak Reddy, Gondi (8876529)
+ * Deepak, Mikkilneni Jeevarathnam (8850079)
+ * Bhavna, Bhavna (8864264)
+ */
+
+using System;
 using System.Data.Entity;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -12,7 +20,7 @@ namespace ResoView.Models
     {
     }
 
-    public DbSet<ProductModel> Products { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     public static ResoViewDbContext Create()
     {

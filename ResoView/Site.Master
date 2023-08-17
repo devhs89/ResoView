@@ -1,11 +1,20 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ResoView.SiteMaster" %>
+﻿<%--
+  - Copyright 2023, Group 2
+  - Bhavna, Bhavna (8864264)
+  - Deepak, Mikkilneni Jeevarathnam (8850079)
+  - Harpreet Singh (8870943)
+  - Pratharan Sai Rupak Reddy, Gondi (8876529)
+--%>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ResoView.SiteMaster" %>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title><%: Page.Title %> - ResoView</title>
 
   <asp:PlaceHolder runat="server">
@@ -89,10 +98,15 @@
     <footer class="container-fluid py-5 text-bg-dark">
       <div class="row small text-center">
         <div class="col-12">
-          <div>ResoView</div>
+          <div>&copy; <%: DateTime.Now.Year %> - ResoView, Group 2, Programming with .NET</div>
         </div>
         <div class="col-12">
-          <div>&copy; <%: DateTime.Now.Year %> - Harpreet Singh</div>
+          <div class="group-members justify-content-xl-center row row-cols-1 row-cols-md-2 row-cols-xl-4">
+            <div class="col text-md-end">Bhavna, Bhavna (8864264)</div>
+            <div class="col col-xl-auto text-md-start text-xl-center">Deepak, Mikkilneni Jeevarathnam (8850079)</div>
+            <div class="col col-xl-auto text-md-end text-xl-center">Harpreet Singh (8870943)</div>
+            <div class="col text-md-start">Pratharan Sai Rupak Reddy, Gondi (8876529)</div>
+          </div>
         </div>
       </div>
     </footer>

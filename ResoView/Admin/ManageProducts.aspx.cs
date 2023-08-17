@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Copyright 2023, Group 2
+ * Harpreet Singh (8870943)
+ * Pratharan Sai Rupak Reddy, Gondi (8876529)
+ * Deepak, Mikkilneni Jeevarathnam (8850079)
+ * Bhavna, Bhavna (8864264)
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -17,7 +25,7 @@ namespace ResoView.Admin
 
     private void BindGridView()
     {
-      List<ProductModel> productsList;
+      List<Product> productsList;
       using (var dbContext = new ResoViewDbContext())
       {
         productsList = dbContext.Products.ToList();
@@ -94,7 +102,7 @@ namespace ResoView.Admin
 
       using (var dbContext = new ResoViewDbContext())
       {
-        var newProduct = new ProductModel
+        var newProduct = new Product
         {
           Name = newProductName,
           Price = newPrice,
