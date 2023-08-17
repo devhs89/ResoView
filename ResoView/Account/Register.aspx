@@ -48,7 +48,7 @@
     </div>
     <div class="row">
       <div class="col-12 mb-5 mt-3">
-        <asp:Button CssClass="btn btn-outline-dark" OnClick="CreateUser_Click" runat="server" Text="Register" />
+        <asp:Button CssClass="btn btn-primary" OnClick="CreateUser_Click" runat="server" Text="Register" />
       </div>
     </div>
   </main>

@@ -39,7 +39,7 @@
           </div>
           <div class="row">
             <div class="col-12 mb-3">
-              <asp:Button CssClass="btn btn-outline-dark" OnClick="LogIn" runat="server" Text="Log in" />
+              <asp:Button CssClass="btn btn-primary" OnClick="LogIn" runat="server" Text="Log in" />
             </div>
           </div>
         </div>
