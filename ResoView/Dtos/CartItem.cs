@@ -4,7 +4,7 @@ namespace ResoView.Dtos
 {
   public class CartItem
   {
-    public ProductModel Product { get; set; }
+    public Product Product { get; set; }
     public int ProductQuantity { get; set; }
   }
 }

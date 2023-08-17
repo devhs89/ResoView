@@ -17,7 +17,7 @@ namespace ResoView.Admin
 
     private void BindGridView()
     {
-      List<ProductModel> productsList;
+      List<Product> productsList;
       using (var dbContext = new ResoViewDbContext())
       {
         productsList = dbContext.Products.ToList();
@@ -94,7 +94,7 @@ namespace ResoView.Admin
 
       using (var dbContext = new ResoViewDbContext())
       {
-        var newProduct = new ProductModel
+        var newProduct = new Product
         {
           Name = newProductName,
           Price = newPrice,

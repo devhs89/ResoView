@@ -12,7 +12,7 @@ namespace ResoView.Models
     {
     }
 
-    public DbSet<ProductModel> Products { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     public static ResoViewDbContext Create()
     {

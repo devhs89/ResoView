@@ -45,7 +45,7 @@ namespace ResoView
       UpdateCartItemsCountLabel();
     }
 
-    private static List<ProductModel> GetProducts()
+    private static List<Product> GetProducts()
     {
       using (var dbContext = new ResoViewDbContext())
       {

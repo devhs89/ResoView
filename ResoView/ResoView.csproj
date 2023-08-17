@@ -320,8 +320,12 @@
     <Compile Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.designer.cs">
       <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308170224021_RenameProductsTable.cs" />
+    <Compile Include="Migrations\202308170224021_RenameProductsTable.designer.cs">
+      <DependentUpon>202308170224021_RenameProductsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppRoleModel.cs" />
-    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ResoViewDbContext.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -392,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308160328395_AddImageUrlColumnToProductsTable.resx">
       <DependentUpon>202308160328395_AddImageUrlColumnToProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308170224021_RenameProductsTable.resx">
+      <DependentUpon>202308170224021_RenameProductsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

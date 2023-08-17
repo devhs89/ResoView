@@ -115,7 +115,7 @@ CREATE INDEX IX_UserId
     ON AspNetUserClaims (UserId)
 GO
 
-CREATE TABLE ProductModels
+CREATE TABLE Products
 (
     Id          int IDENTITY
         CONSTRAINT [PK_dbo.ProductModels]
@@ -143,14 +143,14 @@ INSERT INTO DreamTeamGp2_ResoView.dbo.AspNetRoles (Id, Name, Discriminator)
 VALUES (N'de899b6b-605f-4c80-9ec8-90a95e50a51e', N'admin', N'AppRole');
 INSERT INTO DreamTeamGp2_ResoView.dbo.AspNetRoles (Id, Name, Discriminator)
 VALUES (N'f38888f8-667f-48f2-8cc6-55b0b01b1d14', N'member', N'AppRole');
-INSERT INTO DreamTeamGp2_ResoView.dbo.ProductModels (Name, Price, Description, ImageUrl)
+INSERT INTO DreamTeamGp2_ResoView.dbo.Products (Name, Price, Description, ImageUrl)
 VALUES (N'Camera', 899.22, N'A nice camera',
         N'https://cdn.pixabay.com/photo/2014/04/17/23/26/environmental-protection-326923_1280.jpg');
-INSERT INTO DreamTeamGp2_ResoView.dbo.ProductModels (Name, Price, Description, ImageUrl)
+INSERT INTO DreamTeamGp2_ResoView.dbo.Products (Name, Price, Description, ImageUrl)
 VALUES (N'Optoma HD146X', 599.99,
         N'The Optoma HD146X delivers stunning Full HD 1080p resolution and vibrant colours',
         N'https://cdn.pixabay.com/photo/2023/08/06/19/01/colvers-8173610_1280.jpg');
-INSERT INTO DreamTeamGp2_ResoView.dbo.ProductModels (Name, Price, Description, ImageUrl)
+INSERT INTO DreamTeamGp2_ResoView.dbo.Products (Name, Price, Description, ImageUrl)
 VALUES (N'Epson Home Cinema 5050UB', 2799.00,
         N'The Epson Home Cinema 5050UB boasts 4K PRO UHD resolution HDR support and advanced 3LCD technology for impeccable colour accuracy',
         N'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.jpg');
