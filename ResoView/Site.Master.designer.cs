@@ -15,6 +15,33 @@ namespace ResoView
     {
 
         /// <summary>
+        /// HomeLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HomeLink;
+
+        /// <summary>
+        /// ProductsLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink ProductsLink;
+
+        /// <summary>
+        /// CartLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink CartLink;
+
+        /// <summary>
         /// LoginView control.
         /// </summary>
         /// <remarks>

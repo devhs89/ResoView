@@ -1,10 +1,10 @@
 ﻿using System;
+using System.IO;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using ResoView.Constants;
 
@@ -71,6 +71,11 @@ namespace ResoView
 
     protected void Page_Load(object sender, EventArgs e)
     {
+      if (!IsPostBack)
+      {
+        IsActivePage();
+      }
+
       if (!Context.User.Identity.IsAuthenticated) return;
       var userIdentity = Context.User.Identity as ClaimsIdentity;
       FullName = userIdentity.FindFirstValue(CustomClaimConstant.FullName);
@@ -80,6 +85,43 @@ namespace ResoView
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
       Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+    }
+
+    private void IsActivePage()
+    {
+      SetActiveClass(HomeLink, "Home");
+      SetActiveClass(ProductsLink, "Products");
+      SetActiveClass(CartLink, "Cart");
+
+      var registerLink = (HyperLink)LoginView.FindControl("RegisterLink");
+      var loginLink = (HyperLink)LoginView.FindControl("LoginLink");
+      var manageAccountLink = (HyperLink)LoginView.FindControl("ManageAccountLink");
+      var adminPanelLink = (HyperLink)LoginView.FindControl("AdminPanelLink");
+      if (registerLink != null)
+      {
+        SetActiveClass(registerLink, "Register");
+      }
+
+      if (loginLink != null)
+      {
+        SetActiveClass(loginLink, "Login");
+      }
+
+      if (manageAccountLink != null)
+      {
+        SetActiveClass(manageAccountLink, "Manage");
+      }
+
+      if (adminPanelLink != null)
+      {
+        SetActiveClass(adminPanelLink, "AdminPanel");
+      }
+    }
+
+    private void SetActiveClass(WebControl link, string pageName)
+    {
+      var currentPage = Path.GetFileName(Request.Url.AbsolutePath);
+      link.CssClass = currentPage.Equals(pageName, StringComparison.OrdinalIgnoreCase) ? "nav-link active" : "nav-link";
     }
   }
 }
