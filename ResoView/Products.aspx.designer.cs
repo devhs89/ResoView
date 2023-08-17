@@ -7,30 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ResoView.Account
+namespace ResoView
 {
 
 
-    public partial class Manage
+    public partial class Products
     {
 
         /// <summary>
-        /// successMessage control.
+        /// LabelCartItemsCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
+        protected global::System.Web.UI.WebControls.Label LabelCartItemsCount;
 
         /// <summary>
-        /// ChangePassword control.
+        /// GridViewProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ChangePassword;
+        protected global::System.Web.UI.WebControls.GridView GridViewProducts;
 
         /// <summary>
         /// Master property.

@@ -7,66 +7,57 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ResoView.Account
+namespace ResoView
 {
 
 
-    public partial class ManagePassword
+    public partial class Cart
     {
 
         /// <summary>
-        /// CurrentPasswordLabel control.
+        /// cartErrorsBulletedList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurrentPasswordLabel;
+        protected global::System.Web.UI.WebControls.BulletedList cartErrorsBulletedList;
 
         /// <summary>
-        /// CurrentPassword control.
+        /// cartItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CurrentPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartItems;
 
         /// <summary>
-        /// NewPasswordLabel control.
+        /// multiSelectListBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordLabel;
+        protected global::System.Web.UI.WebControls.ListBox multiSelectListBox;
 
         /// <summary>
-        /// NewPassword control.
+        /// continueShopping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPassword;
+        protected global::System.Web.UI.WebControls.HyperLink continueShopping;
 
         /// <summary>
-        /// ConfirmNewPasswordLabel control.
+        /// checkOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmNewPasswordLabel;
-
-        /// <summary>
-        /// ConfirmNewPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmNewPassword;
+        protected global::System.Web.UI.WebControls.HyperLink checkOut;
 
         /// <summary>
         /// Master property.

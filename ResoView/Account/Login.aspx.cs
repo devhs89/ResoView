@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity.Owin;
@@ -18,15 +18,14 @@ namespace ResoView.Account
       }
     }
 
-    protected void LogIn(object sender, EventArgs e)
+    protected async void LogIn(object sender, EventArgs e)
     {
       if (!IsValid) return;
 
-      var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-      var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+      var userManager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
+      var signinManager = Context.GetOwinContext().GetUserManager<ResoViewSignInManager>();
 
-      var appUser =
-        userManager.Users.SingleOrDefault(user => user.Email == Email.Text);
+      var appUser = await userManager.Users.SingleOrDefaultAsync(user => user.Email == Email.Text);
       if (appUser == null)
       {
         ShowLoginError(@"User does not exists", 403);
@@ -46,7 +45,6 @@ namespace ResoView.Account
           ShowLoginError();
           break;
         case SignInStatus.Failure:
-          break;
         default:
           ShowLoginError(@"Invalid login attempt", 403);
           break;
