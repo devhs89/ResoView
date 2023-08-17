@@ -3,7 +3,7 @@
   - Bhavna, Bhavna (8864264)
   - Deepak, Mikkilneni Jeevarathnam (8850079)
   - Harpreet Singh (8870943)
-  - Pratharan Sai Rupak Reddy, Gondi ()
+  - Pratharan Sai Rupak Reddy, Gondi (8876529)
 --%>
 
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ResoView.SiteMaster" %>
@@ -105,7 +105,7 @@
             <div class="col text-md-end">Bhavna, Bhavna (8864264)</div>
             <div class="col col-xl-auto text-md-start text-xl-center">Deepak, Mikkilneni Jeevarathnam (8850079)</div>
             <div class="col col-xl-auto text-md-end text-xl-center">Harpreet Singh (8870943)</div>
-            <div class="col text-md-start">Pratharan Sai Rupak Reddy, Gondi ()</div>
+            <div class="col text-md-start">Pratharan Sai Rupak Reddy, Gondi (8876529)</div>
           </div>
         </div>
       </div>

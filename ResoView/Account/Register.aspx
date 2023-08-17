@@ -3,7 +3,7 @@
   - Bhavna, Bhavna (8864264)
   - Deepak, Mikkilneni Jeevarathnam (8850079)
   - Harpreet Singh (8870943)
-  - Pratharan Sai Rupak Reddy, Gondi ()
+  - Pratharan Sai Rupak Reddy, Gondi (8876529)
 --%>
 
 <%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="ResoView.Account.Register" %>
