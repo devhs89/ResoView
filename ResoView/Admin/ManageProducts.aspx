@@ -13,6 +13,7 @@
     <div class="manage-products-wrapper">
       <h2>Manage Products</h2>
       <div class="table-responsive">
+        <%-- Grid View of Products --%>
         <asp:GridView AutoGenerateColumns="False" CssClass="table table-bordered table-striped" DataKeyNames="Id" ID="GridViewProducts" OnRowCancelingEdit="GridViewProducts_RowCancelingEdit" OnRowDeleting="GridViewProducts_RowDeleting" OnRowEditing="GridViewProducts_RowEditing" OnRowUpdating="GridViewProducts_RowUpdating" runat="server" ValidationGroup="EditUpdateValidationGroup">
           <Columns>
             <asp:BoundField ControlStyle-CssClass="form-control" DataField="Id" HeaderText="Product ID" ReadOnly="True" />
@@ -55,6 +56,7 @@
                 <asp:RegularExpressionValidator ControlToValidate="EditProductDescription" CssClass="text-danger" Display="Dynamic" ErrorMessage="Product name can consist of A-Z, a-z, 0-9 characters" runat="server" ValidationExpression="^[A-Za-z0-9\s]+$"></asp:RegularExpressionValidator>
               </EditItemTemplate>
             </asp:TemplateField>
+            <%-- Action Buttons for each row of products --%>
             <asp:TemplateField HeaderText="Actions">
               <ItemTemplate>
                 <asp:LinkButton CommandName="Edit" CssClass="btn btn-sm btn-primary" ID="btnEdit" runat="server" Text="Edit" ValidationGroup="EditUpdateValidationGroup" />
@@ -70,6 +72,7 @@
       </div>
     </div>
     <div class="add-new-product-wrapper">
+      <%-- Add new product form controls --%>
       <h2 class="mt-3">Add New Product</h2>
       <div class="row">
         <div class="col-md-6 mb-3">
@@ -92,6 +95,7 @@
           <asp:RegularExpressionValidator ControlToValidate="NewDescription" CssClass="text-danger" Display="Dynamic" ErrorMessage="Product name can consist of A-Z, a-z, 0-9 characters" runat="server" ValidationExpression="^[A-Za-z0-9\s]+$"></asp:RegularExpressionValidator>
         </div>
         <div class="col-12 mb-5">
+          <%-- Add product button --%>
           <asp:Button CssClass="btn btn-primary" ID="AddProduct" OnClick="btnAddProduct_Click" runat="server" Text="Add Product" ValidationGroup="AddProductGroup" />
         </div>
       </div>

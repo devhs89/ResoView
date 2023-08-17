@@ -20,12 +20,17 @@ namespace ResoView.Account
     {
     }
 
+    // On change password button click, try changing the password
     protected void ChangePassword_Click(object sender, EventArgs e)
     {
+      // If page is not valid, return
       if (!IsValid) return;
+      // Get the current user's manager and sign in manager
       var manager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
       var signInManager = Context.GetOwinContext().Get<ResoViewSignInManager>();
+      // Try changing the password
       var result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
+      // If successful, sign in the user and redirect to the manage page, else add the errors to the page
       if (result.Succeeded)
       {
         var user = manager.FindById(User.Identity.GetUserId());

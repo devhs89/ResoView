@@ -13,11 +13,13 @@
     <h2 id="title"><%: Title %></h2>
     <h4>Create a new account</h4>
     <hr />
+    <%-- Literal tag to display error messages --%>
     <p class="text-danger">
       <asp:Literal ID="ErrorMessage" runat="server" />
     </p>
     <div class="row">
       <div class="col-md-6 mb-3">
+        <%-- Firstname form control --%>
         <div class="form-floating">
           <asp:TextBox CssClass="form-control" ID="FirstName" placeholder="First Name" runat="server" />
           <asp:Label AssociatedControlId="FirstName" runat="server">First Name</asp:Label>
@@ -25,6 +27,7 @@
         </div>
       </div>
       <div class="col-md-6 mb-3">
+        <%-- Lastname form control --%>
         <div class="form-floating">
           <asp:TextBox CssClass="form-control" ID="LastName" placeholder="Last Name" runat="server" />
           <asp:Label AssociatedControlId="LastName" runat="server">Last Name</asp:Label>
@@ -32,6 +35,7 @@
         </div>
       </div>
       <div class="col-12 col-xl-4 mb-3">
+        <%-- Email address form control --%>
         <div class="form-floating">
           <asp:TextBox CssClass="form-control" ID="Email" placeholder="Email" runat="server" TextMode="Email" />
           <asp:Label AssociatedControlId="Email" runat="server">Email</asp:Label>
@@ -39,6 +43,7 @@
         </div>
       </div>
       <div class="col-md-6 col-xl-4 mb-3">
+        <%-- Password form control --%>
         <div class="form-floating">
           <asp:TextBox CssClass="form-control" ID="Password" placeholder="Password" runat="server" TextMode="Password" />
           <asp:Label AssociatedControlId="Password" runat="server">Password</asp:Label>
@@ -46,6 +51,7 @@
         </div>
       </div>
       <div class="col-md-6 col-xl-4">
+        <%-- Confirm password form control, must match password form control value --%>
         <div class="form-floating">
           <asp:TextBox CssClass="form-control" ID="ConfirmPassword" placeholder="Confirm Password" runat="server" TextMode="Password" />
           <asp:Label AssociatedControlId="ConfirmPassword" runat="server">Confirm Password</asp:Label>
@@ -56,6 +62,7 @@
     </div>
     <div class="row">
       <div class="col-12 mb-5 mt-3">
+        <%-- Register button --%>
         <asp:Button CssClass="btn btn-primary" OnClick="CreateUser_Click" runat="server" Text="Register" />
       </div>
     </div>

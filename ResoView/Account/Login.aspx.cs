@@ -15,8 +15,10 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace ResoView.Account
 {
+  // Login page code-behind class
   public partial class Login : Page
   {
+    // On page load, setup the register link and redirect to the return url if it exists
     protected void Page_Load(object sender, EventArgs e)
     {
       RegisterHyperLink.NavigateUrl = "Register";
@@ -27,13 +29,16 @@ namespace ResoView.Account
       }
     }
 
+    // On login button click, validate the user and redirect to the return url if it exists, or show appropriate error(s)
     protected async void LogIn(object sender, EventArgs e)
     {
       if (!IsValid) return;
 
+      // Get user and sign in managers from HttpContext
       var userManager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
       var signinManager = Context.GetOwinContext().GetUserManager<ResoViewSignInManager>();
 
+      // Find user by email
       var appUser = await userManager.Users.SingleOrDefaultAsync(user => user.Email == Email.Text);
       if (appUser == null)
       {
@@ -41,6 +46,7 @@ namespace ResoView.Account
         return;
       }
 
+      // Try to sign in the user with the given password, count failed attempts
       var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, true);
       switch (result)
       {
@@ -60,6 +66,7 @@ namespace ResoView.Account
       }
     }
 
+    // Update the login error message and status code
     private void ShowLoginError(string errText = @"Internal server error", int respCode = 500)
     {
       Response.StatusCode = respCode;
