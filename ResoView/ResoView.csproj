@@ -182,6 +182,7 @@
     <Content Include="docker.env" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Models\DreamTeamGp2_ResoView.sql" />
     <Content Include="Products.aspx" />
     <Content Include="Sales\Cart.aspx" />
     <Content Include="Sales\Checkout.aspx" />
