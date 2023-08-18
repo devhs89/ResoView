@@ -14,14 +14,18 @@ using ResoView.Constants;
 
 namespace ResoView.Models
 {
+  // Class to represent the user of the application, that inherits from IdentityUser
   public class AppUser : IdentityUser
   {
+    // Additional properties for the user
     public string FirstName { get; set; }
     public string LastName { get; set; }
 
+    // Method to generate the user identity, that is used for authentication
     private ClaimsIdentity GenerateUserIdentity(ResoViewUserManager manager)
     {
       var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
+      // Add fullname as a claim
       userIdentity.AddClaim(new Claim(CustomClaimConstant.FullName, $"{FirstName} {LastName}"));
       return userIdentity;
     }

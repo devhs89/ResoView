@@ -8,6 +8,7 @@
 
 namespace ResoView.Constants
 {
+  // Class to store custom claim constants
   public class CustomClaimConstant
   {
     public const string FullName = "fullname";

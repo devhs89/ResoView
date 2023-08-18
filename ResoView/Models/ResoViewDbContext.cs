@@ -13,13 +13,16 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ResoView.Models
 {
+  // Application database context class that inherits from IdentityDbContext
   public class ResoViewDbContext : IdentityDbContext<AppUser>
   {
+    // Constructor that calls the base class constructor with the "DefaultConnection" connection string
     public ResoViewDbContext()
       : base("DefaultConnection", throwIfV1Schema: false)
     {
     }
 
+    // Products table property that represents the Products table in the database
     public DbSet<Product> Products { get; set; }
 
     public static ResoViewDbContext Create()

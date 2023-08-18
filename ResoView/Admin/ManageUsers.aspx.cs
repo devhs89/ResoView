@@ -24,8 +24,10 @@ namespace ResoView.Admin
       BindUsersGridView();
     }
 
+    // Bind users to grid view method
     private void BindUsersGridView()
     {
+      // Get role manager and user manager from Owin context
       var roleManager = Context.GetOwinContext().GetUserManager<ResoViewRoleManager>();
       var userManager = Context.GetOwinContext().GetUserManager<ResoViewUserManager>();
       var memberRoleId = roleManager.Roles.SingleOrDefault(r => r.Name == "member")?.Id;
@@ -35,12 +37,14 @@ namespace ResoView.Admin
       GridViewUsers.DataBind();
     }
 
+    // Handle row canceling edit event
     protected void GridViewUsers_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
       GridViewUsers.EditIndex = -1;
       BindUsersGridView();
     }
 
+    // Handle row deleting event
     protected void GridViewUsers_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
       var id = GridViewUsers.DataKeys[e.RowIndex]?.Values?["Id"].ToString();
@@ -52,12 +56,14 @@ namespace ResoView.Admin
       BindUsersGridView();
     }
 
+    // Handle row editing event
     protected void GridViewUsers_RowEditing(object sender, GridViewEditEventArgs e)
     {
       GridViewUsers.EditIndex = e.NewEditIndex;
       BindUsersGridView();
     }
 
+    // Handle row updating event
     protected void GridViewUsers_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
       if (!Page.IsValid) return;

@@ -26,6 +26,7 @@ namespace ResoView
       GridViewProducts.DataBind();
     }
 
+    // Add to cart button click event handler
     protected void btnAddToCart_Click(object sender, EventArgs e)
     {
       var btnAddToCart = (Button)sender;
@@ -53,6 +54,7 @@ namespace ResoView
       UpdateCartItemsCountLabel();
     }
 
+    // Get products from database
     private static List<Product> GetProducts()
     {
       using (var dbContext = new ResoViewDbContext())
@@ -61,6 +63,7 @@ namespace ResoView
       }
     }
 
+    // Update cart items count label
     private void UpdateCartItemsCountLabel()
     {
       var cartItemsCount = GetCartItemsCount();
@@ -70,6 +73,7 @@ namespace ResoView
       LabelCartItemsCount.Visible = true;
     }
 
+    // Get cart items count from session
     private int GetCartItemsCount()
     {
       var cartItems = (List<CartItem>)Session["Cart"];

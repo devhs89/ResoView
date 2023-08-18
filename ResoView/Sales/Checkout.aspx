@@ -16,6 +16,7 @@
         <p class="text-success"><%: SuccessMessage %></p>
       </asp:PlaceHolder>
     </div>
+    <%-- Check out GridView --%>
     <asp:GridView AutoGenerateColumns="False" CssClass="table table-bordered table-striped" ID="GridViewCheckout" runat="server">
       <Columns>
         <asp:BoundField DataField="Product.Name" HeaderText="Product" />
@@ -25,6 +26,7 @@
     </asp:GridView>
     <div class="mt-3">
       <h4>Total: <asp:Label CssClass="text-primary" ID="LabelTotal" runat="server" /></h4>
+      <%-- Place order button --%>
       <asp:Button CssClass="btn btn-primary mt-3" ID="btnPlaceOrder" OnClick="btnPlaceOrder_Click" runat="server" Text="Place Order" />
     </div>
   </main>

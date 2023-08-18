@@ -13,10 +13,14 @@ namespace ResoView
 {
   public static class RouteConfig
   {
+    // Register routes for the application
     public static void RegisterRoutes(RouteCollection routes)
     {
+      // Instantiate friendly URL Settings
       var settings = new FriendlyUrlSettings();
+      // Redirect to permanent URL
       settings.AutoRedirectMode = RedirectMode.Permanent;
+      // Register routes with friendly URLs
       routes.EnableFriendlyUrls(settings);
     }
   }
