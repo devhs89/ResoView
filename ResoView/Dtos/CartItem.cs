@@ -10,6 +10,7 @@ using ResoView.Models;
 
 namespace ResoView.Dtos
 {
+  // Class to represent a cart item
   public class CartItem
   {
     public Product Product { get; set; }

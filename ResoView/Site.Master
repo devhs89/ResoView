@@ -45,12 +45,16 @@
     </Scripts>
   </asp:ScriptManager>
 
+  <%-- Appliation navigation bar --%>
   <nav class="bg-dark fixed-top navbar navbar-dark navbar-expand-sm navbar-toggleable-sm shadow-sm">
     <div class="container-fluid">
+      <%-- Brand name used for the logo --%>
       <a class="navbar-brand" href="~/" runat="server">ResoView</a>
+      <%-- Hamburger menu for mobile devices --%>
       <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target=".navbar-collapse" data-bs-toggle="collapse" title="Toggle navigation" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <%-- Navigation links --%>
       <div class="collapse d-sm-inline-flex justify-content-between navbar-collapse">
         <ul class="flex-grow-1 navbar-nav">
           <li class="nav-item">
@@ -64,6 +68,7 @@
           </li>
         </ul>
         <asp:LoginView ID="LoginView" runat="server" ViewStateMode="Disabled">
+          <%-- Login and register links shown when user is not logged in --%>
           <AnonymousTemplate>
             <ul class="navbar-nav navbar-right">
               <li>
@@ -74,12 +79,14 @@
               </li>
             </ul>
           </AnonymousTemplate>
+          <%-- Manage account, admin panel and log off links shown when user is logged in --%>
           <LoggedInTemplate>
             <ul class="navbar-nav navbar-right">
               <li>
                 <asp:HyperLink CssClass="nav-link" ID="ManageAccountLink" NavigateUrl="~/Account/Manage" runat="server" title="Manage your account">Hello, <%: FullName %></asp:HyperLink >
               </li>
               <li>
+                <%-- Special case admin panel link, only shown to admin users --%>
                 <asp:HyperLink CssClass="nav-link" ID="AdminPanelLink" NavigateUrl="~/Admin/AdminPanel" runat="server" Text="Admin Panel"></asp:HyperLink>
               </li>
               <li>

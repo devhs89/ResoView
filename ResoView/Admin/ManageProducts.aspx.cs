@@ -19,6 +19,7 @@ namespace ResoView.Admin
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      // If the page is loaded for the first time, bind the grid view
       if (IsPostBack) return;
       BindGridView();
     }
@@ -26,6 +27,8 @@ namespace ResoView.Admin
     private void BindGridView()
     {
       List<Product> productsList;
+      // Get products from the database and bind them to the grid view
+      // Using statement to ensure resources are disposed after use
       using (var dbContext = new ResoViewDbContext())
       {
         productsList = dbContext.Products.ToList();
@@ -35,23 +38,28 @@ namespace ResoView.Admin
       GridViewProducts.DataBind();
     }
 
+    // On edit button click, set the edit index of the grid view to the row index, and bind the grid view again
     protected void GridViewProducts_RowEditing(object sender, GridViewEditEventArgs e)
     {
       GridViewProducts.EditIndex = e.NewEditIndex;
       BindGridView();
     }
 
+    // On edit cancel button click, set the edit index of the grid view to -1, and bind the grid view again
     protected void GridViewProducts_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
       GridViewProducts.EditIndex = -1;
       BindGridView();
     }
 
+    // On update button click, get the updated values from the grid view row, and update the product in the database
     protected void GridViewProducts_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
+      // Ensure form controls are valid
       Page.Validate("EditUpdateValidationGroup");
       if (!Page.IsValid) return;
 
+      // Find controls in the grid view row by their id
       var row = GridViewProducts.Rows[e.RowIndex];
       var id = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex]?.Values?["Id"]);
       var updatedProductName = (row.FindControl("EditProductName") as TextBox)?.Text;
@@ -59,6 +67,7 @@ namespace ResoView.Admin
       var updatedImageUrl = (row.FindControl("EditProductImageUrl") as TextBox)?.Text;
       var updatedDescription = (row.FindControl("EditProductDescription") as TextBox)?.Text;
 
+      // Update product in the database, set the edit index of the grid view to -1, and bind the grid view again
       using (var dbContext = new ResoViewDbContext())
       {
         var productToUpdate = dbContext.Products.Find(id);
@@ -73,7 +82,7 @@ namespace ResoView.Admin
       }
     }
 
-
+    // On delete button click, get the id of the product to delete, and delete the product from the database
     protected void GridViewProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
       var id = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex]?.Values?["Id"]);
@@ -88,7 +97,7 @@ namespace ResoView.Admin
       }
     }
 
-
+    // On add product button click, validate the page controls, and add the product to the database
     protected void btnAddProduct_Click(object sender, EventArgs e)
     {
       // Validate the page controls
@@ -117,6 +126,7 @@ namespace ResoView.Admin
       }
     }
 
+    // Clear the new product form controls
     private void ClearNewProductForm()
     {
       NewProductName.Text = string.Empty;

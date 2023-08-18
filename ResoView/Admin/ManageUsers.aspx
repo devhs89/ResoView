@@ -13,8 +13,10 @@
     <div class="manage-users-wrapper">
       <h2>Manage Users</h2>
       <div class="table-responsive">
+        <%-- Manage Users GridView --%>
         <asp:GridView AutoGenerateColumns="False" CssClass="table table-bordered table-striped" DataKeyNames="Id" ID="GridViewUsers" OnRowCancelingEdit="GridViewUsers_RowCancelingEdit" OnRowDeleting="GridViewUsers_RowDeleting" OnRowEditing="GridViewUsers_RowEditing" OnRowUpdating="GridViewUsers_RowUpdating" runat="server">
           <Columns>
+            <%-- Firstname template field --%>
             <asp:TemplateField HeaderText="Firstname">
               <ItemTemplate>
                 <asp:Label ID="Firstname" runat="server" Text='<%# Eval("FirstName") %>' />
@@ -25,6 +27,7 @@
                 <asp:RegularExpressionValidator ControlToValidate="EditFirstName" CssClass="text-danger" Display="Dynamic" ErrorMessage="Firstname can consist of A-Z, a-z, 0-9 characters" runat="server" ValidationExpression="^[A-Za-z0-9\s]+$"></asp:RegularExpressionValidator>
               </EditItemTemplate>
             </asp:TemplateField>
+            <%-- Lastname template field --%>
             <asp:TemplateField HeaderText="Lastname">
               <ItemTemplate>
                 <asp:Label ID="Lastname" runat="server" Text='<%# Eval("LastName") %>' />
@@ -35,6 +38,7 @@
                 <asp:RegularExpressionValidator ControlToValidate="EditLastName" CssClass="text-danger" Display="Dynamic" ErrorMessage="Lastname can consist of A-Z, a-z, 0-9 characters" runat="server" ValidationExpression="^[A-Za-z0-9\s]+$"></asp:RegularExpressionValidator>
               </EditItemTemplate>
             </asp:TemplateField>
+            <%-- Email template field --%>
             <asp:TemplateField HeaderText="Email">
               <ItemTemplate>
                 <asp:Label ID="Email" runat="server" Text='<%# Eval("Email") %>' />
@@ -45,6 +49,7 @@
                 <asp:RegularExpressionValidator ControlToValidate="EditEmail" CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter a valid email address." runat="server" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" />
               </EditItemTemplate>
             </asp:TemplateField>
+            <%-- Row action buttons template field --%>
             <asp:TemplateField HeaderText="Actions">
               <ItemTemplate>
                 <asp:LinkButton CommandName="Edit" CssClass="btn btn-sm btn-primary" ID="btnEdit" runat="server" Text="Edit" />

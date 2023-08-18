@@ -8,6 +8,7 @@
 
 namespace ResoView.Constants
 {
+  // Class to store the role constants
   public static class AppRoleConstant
   {
     public const string Admin = "admin";

@@ -12,6 +12,7 @@
   <main aria-labelledby="title" class="container mt-custom">
     <h2 id="title"><%: Title %></h2>
     <div>
+      <%-- Show success messages here --%>
       <asp:PlaceHolder ID="successMessage" runat="server" ViewStateMode="Disabled" Visible="false">
         <p class="text-success"><%: SuccessMessage %></p>
       </asp:PlaceHolder>
@@ -22,6 +23,7 @@
         <hr />
         <div class="row">
           <div class="col">
+            <%-- Change password link --%>
             <asp:Label AssociatedControlID="ChangePassword" CssClass="me-3" runat="server" Text="Password:"></asp:Label>
             <asp:HyperLink CssClass="text-decoration-none" ID="ChangePassword" NavigateUrl="/Account/ManagePassword.aspx" runat="server" Text="Change" />
           </div>

@@ -20,6 +20,7 @@
       </div>
     </div>
     <div class="table-responsive">
+      <%-- Products list GridView --%>
       <asp:GridView AutoGenerateColumns="False" CssClass="table table-bordered table-striped" ID="GridViewProducts" runat="server">
         <Columns>
           <asp:TemplateField HeaderText="Image" ItemStyle-Width="10%">
@@ -34,6 +35,7 @@
               <asp:TextBox CssClass="form-control" ID="txtQuantity" runat="server" Text="1" TextMode="Number"></asp:TextBox>
             </ItemTemplate>
           </asp:TemplateField>
+          <%-- Add to Cart button --%>
           <asp:TemplateField HeaderText="Add to Cart">
             <ItemTemplate>
               <asp:Button CommandArgument="<%# Container.DataItemIndex %>" CommandName="AddToCart" CssClass="btn btn-sm btn-outline-primary" ID="btnAddToCart" OnClick="btnAddToCart_Click" runat="server" Text="Add to Cart" />

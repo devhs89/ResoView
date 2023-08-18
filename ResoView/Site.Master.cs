@@ -26,6 +26,7 @@ namespace ResoView
     protected static string FullName = "User";
     protected static bool ShowAdminPanel;
 
+    // Setup and use Anti-XSRF token to prevent CSRF attack
     protected void Page_Init(object sender, EventArgs e)
     {
       // The code below helps to protect against XSRF attacks
@@ -81,20 +82,25 @@ namespace ResoView
     {
       if (!IsPostBack)
       {
+        // Set active css class for current page
         IsActivePage();
       }
 
+      // Set full name of logged in user
       if (!Context.User.Identity.IsAuthenticated) return;
       var userIdentity = Context.User.Identity as ClaimsIdentity;
       FullName = userIdentity.FindFirstValue(CustomClaimConstant.FullName);
+      // Show admin panel link if user is admin
       LoginView.FindControl("AdminPanelLink").Visible = Context.User.IsInRole(AppRoleConstant.Admin);
     }
 
+    // Logout user method
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
       Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
     }
 
+    // Determine which page is active and call SetActiveClass method
     private void IsActivePage()
     {
       SetActiveClass(HomeLink, "Home");
@@ -126,6 +132,7 @@ namespace ResoView
       }
     }
 
+    // Set active css class for current page
     private void SetActiveClass(WebControl link, string pageName)
     {
       var currentPage = Path.GetFileName(Request.Url.AbsolutePath);

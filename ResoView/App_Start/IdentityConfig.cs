@@ -18,13 +18,16 @@ using ResoView.Models;
 
 namespace ResoView
 {
+  // Configure the application user manager that inherits from UserManager defined in ASP.NET Identity
   public class ResoViewUserManager : UserManager<AppUser>
   {
+    // Pass the user store to the base class
     public ResoViewUserManager(IUserStore<AppUser> store)
       : base(store)
     {
     }
 
+    // Create user manager with the specified options
     public static ResoViewUserManager Create(IdentityFactoryOptions<ResoViewUserManager> options,
       IOwinContext context)
     {
@@ -51,6 +54,7 @@ namespace ResoView
       manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(1);
       manager.MaxFailedAccessAttemptsBeforeLockout = 3;
 
+      // Configure token provider if data protection provider is set
       var dataProtectionProvider = options.DataProtectionProvider;
       if (dataProtectionProvider != null)
       {
@@ -62,8 +66,10 @@ namespace ResoView
     }
   }
 
+  // Configure the application sign-in manager that inherits from SignInManager defined in ASP.NET Identity
   public class ResoViewSignInManager : SignInManager<AppUser, string>
   {
+    // Pass the user manager and authentication manager to the base class
     public ResoViewSignInManager(ResoViewUserManager userManager, IAuthenticationManager authenticationManager) :
       base(userManager, authenticationManager)
     {
@@ -74,6 +80,7 @@ namespace ResoView
       return user.GenerateUserIdentityAsync((ResoViewUserManager)UserManager);
     }
 
+    // Create sign-in manager with the specified options
     public static ResoViewSignInManager Create(IdentityFactoryOptions<ResoViewSignInManager> options,
       IOwinContext context)
     {
@@ -81,12 +88,15 @@ namespace ResoView
     }
   }
 
+  // Configure the application role manager that inherits from RoleManager defined in ASP.NET Identity
   public class ResoViewRoleManager : RoleManager<AppRole>
   {
+    // Pass the role store to the base class
     public ResoViewRoleManager(IRoleStore<AppRole, string> roleStore) : base(roleStore)
     {
     }
 
+    // Create role manager with the specified options
     public static ResoViewRoleManager Create(IdentityFactoryOptions<ResoViewRoleManager> options,
       IOwinContext context)
     {

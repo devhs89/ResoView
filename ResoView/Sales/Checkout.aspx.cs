@@ -23,6 +23,7 @@ namespace ResoView
       CalculateTotal();
     }
 
+    // Bind the checkout grid view with the cart items
     private void BindCheckoutGridView()
     {
       if (Session["Cart"] == null) return;
@@ -31,6 +32,7 @@ namespace ResoView
       GridViewCheckout.DataBind();
     }
 
+    // Calculate the total price of the cart items
     private void CalculateTotal()
     {
       if (Session["Cart"] == null) return;
@@ -39,6 +41,7 @@ namespace ResoView
       LabelTotal.Text = total.ToString("C");
     }
 
+    // Remove the item from the cart when the user clicks on the place order button
     protected void btnPlaceOrder_Click(object sender, EventArgs e)
     {
       SuccessMessage = "Order placed successfully!";
