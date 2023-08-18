@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ResoView.Models
 {
+  // Class to represent the role of the user, that inherits from IdentityRole
   public class AppRole : IdentityRole
   {
   }

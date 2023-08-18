@@ -11,6 +11,7 @@ using System.Web.UI;
 
 namespace ResoView.Account
 {
+  // Lockout code-behind class
   public partial class Lockout : Page
   {
     protected void Page_Load(object sender, EventArgs e)

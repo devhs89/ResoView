@@ -18,6 +18,7 @@
           <div class="card-body">
             <h5 class="card-title">Manage Users</h5>
             <p class="card-text">View and manage user accounts.</p>
+            <%-- Manage users link --%>
             <a class="btn btn-primary" href="ManageUsers.aspx">Go to Users</a>
           </div>
         </div>
@@ -27,11 +28,11 @@
           <div class="card-body">
             <h5 class="card-title">Manage Products</h5>
             <p class="card-text">Add, edit, and delete products.</p>
+            <%-- Manage products link --%>
             <a class="btn btn-primary" href="ManageProducts.aspx">Go to Products</a>
           </div>
         </div>
       </div>
-      <!-- Add more cards for other functionalities -->
     </div>
   </main>
 </asp:Content>

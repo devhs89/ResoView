@@ -9,6 +9,7 @@
 <%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ResoView.Account.Login" Async="true" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="BodyContent" runat="server">
+  <%-- Login page --%>
   <main aria-labelledby="title" class="container mt-custom">
     <h2 id="title"><%: Title %></h2>
     <h4>Use a local account to log in.</h4>
@@ -23,6 +24,7 @@
           </asp:PlaceHolder>
           <div class="row">
             <div class="col-12">
+              <%-- Email form control --%>
               <div class="form-floating">
                 <asp:TextBox CssClass="form-control" ID="Email" placeholder="Email" runat="server" TextMode="Email" />
                 <asp:Label AssociatedControlID="Email" runat="server">Email</asp:Label>
@@ -30,6 +32,7 @@
               </div>
             </div>
             <div class="col-12">
+              <%-- Password form control --%>
               <div class="form-floating">
                 <asp:TextBox CssClass="form-control" ID="Password" placeholder="Password" runat="server" TextMode="Password" />
                 <asp:Label AssociatedControlID="Password" runat="server">Password</asp:Label>
@@ -39,6 +42,7 @@
           </div>
           <div class="row">
             <div class="col-12 mb-3 mt-1">
+              <%-- Remember me checkbox --%>
               <div class="checkbox">
                 <asp:CheckBox ID="RememberMe" runat="server" />
                 <asp:Label AssociatedControlID="RememberMe" runat="server">Remember me?</asp:Label>
@@ -47,6 +51,7 @@
           </div>
           <div class="row">
             <div class="col-12 mb-3">
+              <%-- Login button --%>
               <asp:Button CssClass="btn btn-primary" OnClick="LogIn" runat="server" Text="Log in" />
             </div>
           </div>
@@ -54,6 +59,7 @@
         <hr />
         <div class="row">
           <div class="col-12 text-center">
+            <%-- Register link to register a new user, if not already registered. --%>
             <asp:HyperLink CssClass="page-link text-primary" ID="RegisterHyperLink" runat="server" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
           </div>
         </div>
