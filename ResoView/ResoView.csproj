@@ -157,7 +157,7 @@
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="App_Data\Backup.DreamTeamGp2_ResoView.mdf" />
+    <Content Include="App_Data\DreamTeamGp2_ResoView.mdf" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
